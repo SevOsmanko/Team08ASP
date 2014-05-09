@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Team_Projects.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <link rel="SHORTCUT ICON" href="Pictures/urlpic.gif"/> 
+    <title><asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="Scripts/jquery.tools.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="TTS.js"></script>
+        <script type="text/javascript" src="sortfilter.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	    <script type="text/javascript" src="Scripts/jquery.tools.overlay.js"></script>
+    <script type="text/javascript">
+	    !window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>');
+	</script>
+	<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+        <script language="javascript" type="text/javascript">
+     
+
+
+        </script>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+    <div class="logoArea">
+        <asp:Image ID="Image1" runat="server" 
+            ImageUrl="~/Pictures/luflogo.gif" Height="54px" class="topimg" />
+    </div>
+    <div class="mainArea">
+        <div class="navbar">
+            <div class="Request_Room"><a class="Request_Room_txt" href="GridviewwithFiltering.aspx">Round Results</a></div>
+            <div class="Round_Results"><a class="Round_Result_txt" href="MyRequests.aspx">My Requests</a></div>
+            <div class="Room_Availability"><a class="Room_Availability_txt" href="RoomAvailability.aspx">Room Search</a></div>
+            <div class="Modules_Page"><a class="Modules_Page_txt" href="RequestRoom.aspx">New Request</a></div>
+            <div class="Map_Page"><a class="Map_Page_txt" href="Map.aspx">Map</a></div>
+            <div class="Help_Page"><a class="Help_Page_txt" href="Help.aspx">Help</a></div>
+            <div style="margin-left: 790px; color: #FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 13px; vertical-align:middle;">
+            <div class="round_ind" onmouseover='showtooltip();' onmouseout='hidetooltip();'><span class="round_icon">P</span></div>
+            <div class="semester_ind" onmouseover='showsemtooltip();' onmouseout='hidesemtooltip();'><span class="sem_icon">1</span></div>
+            <div class="tooltip"><span class="tooltip_round_name">Round P</span><br /><span class="tooltip_round_dates">Start Date: 28/09/2011<br />End Date: 13/10/2011</span></div>
+            <div class="semtooltip"><span class="semtooltip_round_name">Semester 1</span><br /><span class="semtooltip_round_dates">Start Date: 28/09/2011<br />End Date: 13/01/2012</span></div>
+            
+            
+            
+            <asp:LoginView ID="LoginView2" runat="server">
+                <LoggedInTemplate><div class="user_logged_in">Welcome <asp:LoginName ID="LoginName1" runat="server"></asp:LoginName>...</div>
+                </LoggedInTemplate>
+            </asp:LoginView>
+            <asp:HyperLink ID="logout" runat="server" NavigateUrl="~/index.html" Width="60px" font-size="13px"><span class="logout">Logout</span></asp:HyperLink></div>
+        </div>
+        <div class="main-title">
+                <asp:ContentPlaceHolder ID="Heading" runat="server">
+                <asp:Image ID="Image99" runat="server" 
+        ImageUrl="Pictures/ttlbg-sitecopy.jpg" Height="60px" Width="100%"/>
+                </asp:ContentPlaceHolder>
+        </div>
+        <div>
+                <asp:ContentPlaceHolder ID="Content" runat="server">
+                </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+
+</body>
+</html>
